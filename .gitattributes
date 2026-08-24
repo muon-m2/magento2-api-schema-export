@@ -1,0 +1,28 @@
+# Normalise line endings.
+#
+# Without this, a clone made on a machine with `core.autocrlf=true` (the Git for Windows /
+# WSL default) gets a CRLF working tree, while the Composer dist tarball is LF — so the
+# clone differs from the installed package on *every* line, and `diff` against `vendor/`
+# is useless. `text=auto` stores everything as LF in the repository regardless of the
+# contributor's platform, and `eol=lf` checks it back out as LF for everyone.
+#
+# Safe to add to an existing repo here: these modules are published from a Linux staging
+# dir, so their blobs are already LF and adding this triggers no renormalisation.
+* text=auto eol=lf
+
+# Never touch binary formats — normalising them corrupts the file.
+# (SVG is deliberately absent: the bundled flag assets are text and should be normalised.)
+*.png  binary
+*.jpg  binary
+*.jpeg binary
+*.gif  binary
+*.ico  binary
+*.webp binary
+*.woff  binary
+*.woff2 binary
+*.ttf   binary
+*.eot   binary
+*.otf   binary
+*.zip binary
+*.gz  binary
+*.phar binary
