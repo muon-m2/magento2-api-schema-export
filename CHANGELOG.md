@@ -4,8 +4,6 @@
 
 ## [1.0.0] - 2026-08-24
 
-## [1.0.0] - 2026-08-24
-
 ### Added
 
 - Initial release. Pairs `muon/module-api-schema-export` with
